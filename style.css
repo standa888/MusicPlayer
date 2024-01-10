@@ -1,0 +1,278 @@
+
+:root {
+    --main_color: #C4E1F2;
+    --slideBar_color: #7A91BF;
+    --sliderCircle_color: #192340;
+    --shadow_color: #7A91BF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Main", sans-serif;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(Poppins/Poppins-Italic.ttf);
+}
+
+.conteiner {
+    width: 100%;
+    height: 100vh;
+    background: #333;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.music-player {
+    position: relative;
+    background-color: var(--main_color);
+    width: 400px;
+    height: 630px;
+    padding: 25px 35px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.volume-button-box {
+    position: relative;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0 5px 10px var(--shadow_color, 0.22);
+}
+
+.back-button-box {
+    position: relative;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0 5px 10px var(--shadow_color, 0.22);
+}
+
+
+.volume-button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.song-image-content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.song-image-box {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 8px solid #fff;
+}
+.song-image {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.song-info {
+    margin-top: 30px;
+}
+
+.song-name {
+    font-size: 25px;
+    font-weight: 400;
+    color: #333;
+}
+
+.band-name {
+    font-size: 15px;
+    color: #333;
+}
+
+.audio-box {
+    margin-top: 50px;
+    background: transparent;
+}
+
+
+.buttons {
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 50px;
+}
+
+.previous-song-button {
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px var(--shadow_color, 0.22);
+}
+
+.next-song-button {
+    outline: none;
+    border: none;
+    border-radius: 50%;
+
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px var(--shadow_color, 0.22);
+}
+
+.play-button {
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    background-color: #202020;
+    box-shadow: 0 5px 10px var(--shadow_color, 0.22);
+}
+
+.play-button img {
+    width: 25px;
+    height: 25px;
+}
+.play {
+    margin-left: 3px;
+}
+
+#slide-progress-bar {
+    appearance: none;
+    width: 80%;
+    height: 6px;
+    
+    background: var(--slideBar_color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#slide-progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    
+    background: var(--sliderCircle_color);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    box-shadow: 0 5px 10px rgba(255, 26, 26, 0.22);
+}
+
+.volume-button-box:hover .volume-box {
+    visibility: visible;
+}
+
+.volume-box {
+    visibility: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: inherit;
+    height: 180px;
+    background-color: var(--main_color);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px var(--shadow_color, 0.22);
+}
+
+#volume-bar {
+    margin-top: 20px;
+    width: 120px;
+    height: 5px;
+    cursor: pointer;
+    background: #fff;
+    transform: rotate(-90deg);
+    border-radius: 5px;
+}
+
+
+/* Song List css */
+
+.list-song-box {
+    position: relative;
+    height: 70px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.list-song-box button {
+    display: flex;
+    align-items: center;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.image-box {   
+    height: 100%;
+    width: 35%;
+    border-radius: inherit;
+    margin-right: 25px;
+    object-fit: cover;
+    clip-path: polygon(0 0, 100% 0, 62% 100%, 0% 100%)
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.name {
+    font-size: 1em;
+    font-weight: 600;
+    font-family: Poppins;
+    color: #333;
+}
+
+/* Song List css end */
+
+
+
+
